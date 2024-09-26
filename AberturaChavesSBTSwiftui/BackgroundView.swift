@@ -17,27 +17,28 @@ struct BackgroundView: View {
                 let time = timelineContext.date
                 
                 let center = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
-                let sideSize = size.width * 2
+                
+                let sideSize = size.width
                 
                 
                 let firstQuadrantSquare = CGRect(
-                    origin: CGPointMake(center.x, .zero),
-                    size: CGSizeMake(size.width * 0.5, size.height * 0.5)
+                    origin: CGPointMake(center.x, .zero - sideSize * 0.5),
+                    size: CGSizeMake(sideSize, sideSize)
                 )
                 
                 let secondQuadrantSquare = CGRect(
-                    origin: CGPointMake(.zero, .zero),
-                    size: CGSizeMake(size.width * 0.5, size.height * 0.5)
+                    origin: CGPointMake(.zero - sideSize * 0.5, .zero - sideSize * 0.5),
+                    size: CGSizeMake(sideSize, sideSize)
                 )
                 
                 let thirdQuadrantSquare = CGRect(
-                    origin: CGPointMake(.zero, center.y),
-                    size: CGSizeMake(size.width * 0.5, size.height * 0.5)
+                    origin: CGPointMake(.zero - sideSize * 0.5, center.y),
+                    size: CGSizeMake(sideSize, sideSize)
                 )
                 
                 let fourthQuadrantSquare = CGRect(
                     origin: CGPointMake(center.x, center.y),
-                    size: CGSizeMake(size.width * 0.5, size.height * 0.5)
+                    size: CGSizeMake(sideSize, sideSize)
                 )
                 
                 context.transform = CGAffineTransform(translationX: center.x, y: center.y)
@@ -50,13 +51,11 @@ struct BackgroundView: View {
                 context.fill(Rectangle().path(in: fourthQuadrantSquare), with: .color(Color.Background.darkBlue))
    
             }
-//            .frame(width: 1280)
+
         }
         
-        
-        .aspectRatio(1, contentMode: .fill)
-        .frame(width: 640, height: 480)
-        .clipped()
+        .ignoresSafeArea()
+
         
         
     }
