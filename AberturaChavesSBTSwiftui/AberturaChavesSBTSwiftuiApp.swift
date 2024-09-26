@@ -11,7 +11,7 @@ import SwiftUI
 struct AberturaChavesSBTSwiftuiApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BackgroundView()
         }
     }
 }
