@@ -1,13 +1,14 @@
 //
-//  BackgroundView.swift
+//  BackgroundViewV2.swift
 //  AberturaChavesSBTSwiftui
 //
-//  Created by Matheus Silveira Venturini on 26/09/24.
+//  Created by Matheus Silveira Venturini on 29/09/24.
 //
+
 
 import SwiftUI
 
-struct BackgroundView: View {
+struct BackgroundViewV2: View {
     var body: some View {
         
 //        TimelineView(.animation) { timelineContext in
@@ -163,5 +164,5 @@ struct BackgroundView: View {
 }
 
 #Preview {
-    BackgroundView()
+    BackgroundViewV2()
 }
